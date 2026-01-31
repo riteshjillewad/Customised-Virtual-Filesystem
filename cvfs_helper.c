@@ -164,6 +164,7 @@ void displayHelp()
     printf("cat     : Display file contents.\n");
     printf("truncate: Remove all data from a file.\n");
     printf("lseek   : Change the read/write offset position.\n");
+    printf("chmod   : Change the file permissions.\n");
 
     printf("\n[ INFORMATION ]\n");
     printf("stat    : Display statistical information of a file by name.\n");
@@ -354,6 +355,14 @@ void manPageDisplay(char Name[])                             /* Name stores the 
         printf("NAME        : restore\n");
         printf("DESCRIPTION : Restore files from local backup.\n");
         printf("USAGE       : restore\n");
+    }
+
+    /* Manual page for chmod command */
+    else if(strcmp("chmod", Name) == 0)
+    {
+        printf("NAME        : changemod\n");
+        printf("DESCRIPTION : Change the file permission mode.\n");
+        printf("USAGE       : chmod <file_name> <new_permission>\n");
     }
 
     /* Invalid manual page command */
@@ -1397,3 +1406,4 @@ int chmodFile(char *name, int new_permission)
 
     return EXECUTE_SUCCESS;
 }
+
