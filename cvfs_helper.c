@@ -163,7 +163,6 @@ void displayHelp()
     printf("mv      : Rename a file (usage: rename old new).\n");
     printf("cat     : Display file contents.\n");
     printf("truncate: Remove all data from a file.\n");
-    printf("lseek   : Change the read/write offset position.\n");
     printf("chmod   : Change the file permissions.\n");
 
     printf("\n[ INFORMATION ]\n");
@@ -1406,4 +1405,5 @@ int chmodFile(char *name, int new_permission)
 
     return EXECUTE_SUCCESS;
 }
+
 
