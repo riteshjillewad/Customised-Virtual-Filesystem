@@ -413,6 +413,25 @@ int main()
                 }
             }
 
+            // CVFS > chmod Demo.txt 1
+            else if(strcmp("chmod", Command[0]) == 0)
+            {
+                iRet = chmodFile(Command[1], atoi(Command[2]));
+
+                if(iRet == EXECUTE_SUCCESS)
+                {
+                    printf("File permissions updated successfully.\n");
+                }
+                else if(iRet == ERR_FILE_NOT_EXISTS)
+                {
+                    printf("Error: File does not exist.\n");
+                }
+                else if(iRet == ERR_INVALID_PARAMETER)
+                {
+                    printf("Error: Invalid permission mode. Use 1(Read), 2(Write), or 3(R+W).\n");
+                }
+            }
+
             else 
             {
                 printf("ERROR: Command '%s' not recognized! Refer to 'help' for command info.\n", Command[0]);
@@ -432,4 +451,5 @@ int main()
     }// End of while
 
     return 0;
+
 }// End of main
